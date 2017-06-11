@@ -45,7 +45,7 @@ public class CommonAdapter extends RecyclerView.Adapter<CommonAdapter.ViewHolder
         return mData.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tv;
         ImageView iv;
 

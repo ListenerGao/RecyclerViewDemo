@@ -1,9 +1,13 @@
 package com.listenergao.recyclerviewdemo.activity;
 
+import android.graphics.Canvas;
+import android.graphics.Rect;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.listenergao.recyclerviewdemo.R;
 import com.listenergao.recyclerviewdemo.adapter.CommonAdapter;
@@ -40,7 +44,10 @@ public class CommonRecyclerViewActivity extends AppCompatActivity {
 
     private void initRecyclerView(List<String> data) {
         CommonAdapter adapter = new CommonAdapter(data);
+        //设置布局管理器
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //添加Item分割线
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
         mRecyclerView.setAdapter(adapter);
     }
 }
