@@ -6,6 +6,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!--当使用DividerItemDecoration作为RecyclerView的Item分割线时，可以通过下面的属性改变分割线的背景。
+        注意：需要引用drawable目录下的资源文件
+        -->
+        <item name="android:listDivider">@drawable/divider_bg</item>
     </style>
 
 </resources>
