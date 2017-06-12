@@ -32,11 +32,34 @@ public class CommonAdapter extends RecyclerView.Adapter<CommonAdapter.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
         //绑定数据
         String s = mData.get(position);
         holder.iv.setImageResource(R.mipmap.ic_launcher_round);
         holder.tv.setText(s);
+
+        //如果设置了回调，则设置Item点击事件
+        if (mOnItemClickListener != null) {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = holder.getLayoutPosition();
+                    mOnItemClickListener.onItemClick(holder.itemView, pos);
+                }
+            });
+        }
+
+        //如果设置了回调，则设置Item点击事件
+        if (mOnItemLongClickListener != null) {
+            holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    int pos = holder.getLayoutPosition();
+                    mOnItemLongClickListener.OnItemLongClick(holder.itemView, pos);
+                    return true;
+                }
+            });
+        }
     }
 
     @Override
@@ -55,5 +78,27 @@ public class CommonAdapter extends RecyclerView.Adapter<CommonAdapter.ViewHolder
             iv = (ImageView) view.findViewById(R.id.imageView);
 
         }
+    }
+
+    /***************************Item点击事件**********************/
+    private OnItemClickListener mOnItemClickListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.mOnItemClickListener = listener;
+    }
+
+    /***************************Item长按事件**********************/
+    private OnItemLongClickListener mOnItemLongClickListener;
+
+    public interface OnItemLongClickListener {
+        void OnItemLongClick(View view, int position);
+    }
+
+    public void setOnItemLongClickListener(OnItemLongClickListener listener) {
+        this.mOnItemLongClickListener = listener;
     }
 }
