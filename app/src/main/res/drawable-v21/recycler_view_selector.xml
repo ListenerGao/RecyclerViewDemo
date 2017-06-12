@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--RecyclerView背景 实现水波纹效果  5.0以上才会有效果.-->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/light_color">
+    <item android:drawable="@android:color/white"/>
+
+</ripple>
