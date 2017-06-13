@@ -72,7 +72,7 @@ public class CommonAdapter extends RecyclerView.Adapter<CommonAdapter.ViewHolder
         TextView tv;
         ImageView iv;
 
-        public ViewHolder(View view) {
+        private ViewHolder(View view) {
             super(view);
             tv = (TextView) view.findViewById(R.id.textView);
             iv = (ImageView) view.findViewById(R.id.imageView);

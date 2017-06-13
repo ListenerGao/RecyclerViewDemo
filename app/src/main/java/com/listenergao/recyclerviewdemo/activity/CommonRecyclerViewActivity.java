@@ -1,7 +1,5 @@
 package com.listenergao.recyclerviewdemo.activity;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,25 +12,24 @@ import com.listenergao.recyclerviewdemo.adapter.CommonAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CommonRecyclerViewActivity extends AppCompatActivity {
+public class CommonRecyclerViewActivity extends BaseActivity {
 
     private RecyclerView mRecyclerView;
     private List<String> mData;
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_common_recycler_view);
+    protected void initView() {
 
-        initView();
-        initData();
-    }
+        setTitle("RecyclerView线性布局");
+        setBackArrow();
+        setContentLayout(R.layout.activity_common_recycler_view);
 
-    private void initView() {
         mRecyclerView = ((RecyclerView) findViewById(R.id.recycler_view));
     }
 
-    private void initData() {
+    @Override
+    protected void initData() {
         mData = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
             mData.add("item " + i);

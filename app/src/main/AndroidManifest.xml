@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.CommonRecyclerViewActivity"></activity>
+        <activity android:name=".activity.CommonRecyclerViewActivity" />
+        <activity android:name=".activity.GridLayoutActivity" />
+        <activity android:name=".activity.BaseActivity"></activity>
     </application>
 
 </manifest>

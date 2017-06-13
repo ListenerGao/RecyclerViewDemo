@@ -1,11 +1,14 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <!--设置Toolbar上字体的颜色,以及返回和更多按钮的颜色-->
+        <item name="android:textColorPrimary">@color/white_color</item>
         <!--当使用DividerItemDecoration作为RecyclerView的Item分割线时，可以通过下面的属性改变分割线的背景。
         注意：需要引用drawable目录下的资源文件
         -->
