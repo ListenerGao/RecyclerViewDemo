@@ -46,7 +46,7 @@ public class CommonRecyclerViewActivity extends BaseActivity {
         //添加Item分割线
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(mRecyclerView.getContext(), linearLayoutManager.getOrientation());
         mRecyclerView.addItemDecoration(dividerItemDecoration);
-//        mRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+//        mRecyclerView.addItemDecoration(new SpaceItemDecoration(this,SpaceItemDecoration.VERTICAL));
         mRecyclerView.setAdapter(adapter);
 
         //设置Item点击事件

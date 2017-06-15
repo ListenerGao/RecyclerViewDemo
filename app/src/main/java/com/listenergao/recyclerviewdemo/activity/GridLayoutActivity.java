@@ -1,19 +1,26 @@
 package com.listenergao.recyclerviewdemo.activity;
 
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 
 import com.listenergao.recyclerviewdemo.R;
 import com.listenergao.recyclerviewdemo.adapter.GridAdapter;
+import com.listenergao.recyclerviewdemo.itemDecoration.SpaceItemDecoration;
+import com.listenergao.recyclerviewdemo.utils.DisplayUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * Created by gys on 2017/6/13 16:08.
  * 网格布局
  */
 public class GridLayoutActivity extends BaseActivity {
 
+    private static final String TAG = "GridLayoutActivity";
     private RecyclerView mRecyclerView;
     private List<String> mData;
 
@@ -29,7 +36,7 @@ public class GridLayoutActivity extends BaseActivity {
     @Override
     protected void initData() {
         mData = new ArrayList<>();
-        for (int i = 0; i < 60; i++) {
+        for (int i = 0; i < 63; i++) {
             mData.add("item " + i);
         }
 
@@ -44,9 +51,17 @@ public class GridLayoutActivity extends BaseActivity {
          * int orientation, 布局方向
          * boolean reverseLayout   是否反转 true 反转，false 不反转
          */
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 5, GridLayoutManager.VERTICAL, false);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 5, GridLayoutManager.HORIZONTAL, false);
 //        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 5, GridLayoutManager.HORIZONTAL, false);
         mRecyclerView.setLayoutManager(gridLayoutManager);
+        mRecyclerView.addItemDecoration(new SpaceItemDecoration(DisplayUtils.dp2px(5)));
         mRecyclerView.setAdapter(adapter);
+
+        Log.d(TAG, LinearLayoutManager.HORIZONTAL + "");
+        Log.d(TAG, LinearLayoutManager.VERTICAL + "");
+        Log.d(TAG, GridLayoutManager.HORIZONTAL + "");
+        Log.d(TAG, GridLayoutManager.VERTICAL + "");
+        Log.d(TAG, StaggeredGridLayoutManager.HORIZONTAL + "");
+        Log.d(TAG, StaggeredGridLayoutManager.VERTICAL + "");
     }
 }
