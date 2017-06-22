@@ -62,4 +62,27 @@ public class StaggeredAdapter extends RecyclerView.Adapter<StaggeredAdapter.View
 //            iv = (ImageView) itemView.findViewById(R.id.imageView);
         }
     }
+
+    /**
+     * 添加数据
+     *
+     * @param position 添加到数据中的位置
+     */
+    public void addData(int position) {
+        mData.add(position, "这是添加的数据");
+        //注意，这里更新数据集不是用adapter.notifyDataSetChanged()而是notifyItemInserted(position)与notifyItemRemoved(position)
+        // 否则没有动画效果。
+        notifyItemInserted(position);
+    }
+
+    /**
+     * 删除数据
+     *
+     * @param position
+     */
+    public void removeData(int position) {
+        mData.remove(position);
+        notifyItemRemoved(position);
+    }
+
 }

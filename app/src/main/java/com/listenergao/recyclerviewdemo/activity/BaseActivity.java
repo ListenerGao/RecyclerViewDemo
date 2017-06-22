@@ -97,4 +97,13 @@ public class BaseActivity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * 设置Menu的点击事件
+     *
+     * @param listener menu点击事件
+     */
+    protected void setToolbarMenuOnClickListener(Toolbar.OnMenuItemClickListener listener) {
+        mToolbar.setOnMenuItemClickListener(listener);
+    }
 }
