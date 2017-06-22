@@ -8,7 +8,7 @@ import android.util.Log;
 
 import com.listenergao.recyclerviewdemo.R;
 import com.listenergao.recyclerviewdemo.adapter.GridAdapter;
-import com.listenergao.recyclerviewdemo.itemDecoration.SpaceItemDecoration;
+import com.listenergao.recyclerviewdemo.itemDecoration.GridItemDecoration;
 import com.listenergao.recyclerviewdemo.utils.DisplayUtils;
 
 import java.util.ArrayList;
@@ -36,7 +36,7 @@ public class GridLayoutActivity extends BaseActivity {
     @Override
     protected void initData() {
         mData = new ArrayList<>();
-        for (int i = 0; i < 63; i++) {
+        for (int i = 0; i < 65; i++) {
             mData.add("item " + i);
         }
 
@@ -46,15 +46,16 @@ public class GridLayoutActivity extends BaseActivity {
     private void initRecyclerView(List<String> data) {
         GridAdapter adapter = new GridAdapter(data);
         /**
-         * Context context,
+         * Context context,.
          * int spanCount,   每一行或列的个数
          * int orientation, 布局方向
          * boolean reverseLayout   是否反转 true 反转，false 不反转
          */
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 5, GridLayoutManager.HORIZONTAL, false);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 5, GridLayoutManager.VERTICAL, false);
 //        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 5, GridLayoutManager.HORIZONTAL, false);
         mRecyclerView.setLayoutManager(gridLayoutManager);
-        mRecyclerView.addItemDecoration(new SpaceItemDecoration(DisplayUtils.dp2px(5)));
+        GridItemDecoration itemDecoration = new GridItemDecoration(DisplayUtils.dp2px(5));
+        mRecyclerView.addItemDecoration(itemDecoration);
         mRecyclerView.setAdapter(adapter);
 
         Log.d(TAG, LinearLayoutManager.HORIZONTAL + "");
