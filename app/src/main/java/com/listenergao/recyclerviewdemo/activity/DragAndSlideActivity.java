@@ -1,7 +1,9 @@
 package com.listenergao.recyclerviewdemo.activity;
 
+import android.app.Service;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.os.Vibrator;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
@@ -106,10 +108,17 @@ public class DragAndSlideActivity extends BaseActivity {
         @Override
         public void onSelectedChanged(RecyclerView.ViewHolder viewHolder, int actionState) {
             super.onSelectedChanged(viewHolder, actionState);
-            //设置Item背景颜色
+
             if (actionState != ItemTouchHelper.ACTION_STATE_IDLE) {
+                //设置Item背景颜色
                 viewHolder.itemView.setBackgroundColor(Color.LTGRAY);
+
+                //获取系统震动服务
+                Vibrator vib = (Vibrator) getSystemService(Service.VIBRATOR_SERVICE);
+                //震动50毫秒
+                vib.vibrate(50);
             }
+
         }
 
         //当手指松开的时候（拖拽完成的时候）调用
@@ -117,7 +126,7 @@ public class DragAndSlideActivity extends BaseActivity {
         public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
             super.clearView(recyclerView, viewHolder);
             //清除Item背景颜色
-            viewHolder.itemView.setBackgroundColor(0);
+            viewHolder.itemView.setBackgroundColor(Color.WHITE);
         }
     }
 
