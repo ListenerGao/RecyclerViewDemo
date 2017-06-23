@@ -6,6 +6,7 @@ import android.widget.Button;
 
 import com.listenergao.recyclerviewdemo.activity.BaseActivity;
 import com.listenergao.recyclerviewdemo.activity.CommonRecyclerViewActivity;
+import com.listenergao.recyclerviewdemo.activity.DragAndSlideActivity;
 import com.listenergao.recyclerviewdemo.activity.GridLayoutActivity;
 import com.listenergao.recyclerviewdemo.activity.StaggeredActivity;
 
@@ -14,6 +15,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button mCommonRecyclerViewActivity;
     private Button mGridLayoutActivity;
     private Button mStaggeredActivity;
+    private Button mDragAndSlideActivity;
 
 
     @Override
@@ -25,9 +27,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mCommonRecyclerViewActivity = ((Button) findViewById(R.id.button1));
         mGridLayoutActivity = ((Button) findViewById(R.id.button2));
         mStaggeredActivity = ((Button) findViewById(R.id.button3));
+        mDragAndSlideActivity = ((Button) findViewById(R.id.button4));
         mCommonRecyclerViewActivity.setOnClickListener(this);
         mGridLayoutActivity.setOnClickListener(this);
         mStaggeredActivity.setOnClickListener(this);
+        mDragAndSlideActivity.setOnClickListener(this);
     }
 
     @Override
@@ -41,6 +45,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.button3:
                 startActivity(StaggeredActivity.class);
+                break;
+            case R.id.button4:
+                startActivity(DragAndSlideActivity.class);
                 break;
         }
     }
