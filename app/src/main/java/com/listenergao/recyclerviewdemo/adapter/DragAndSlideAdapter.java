@@ -9,13 +9,14 @@ import android.widget.TextView;
 
 import com.listenergao.recyclerviewdemo.R;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by gys on 2017/6/22 18:57.
  */
 
-public class DragAndSlideAdapter extends RecyclerView.Adapter<DragAndSlideAdapter.ViewHolder> {
+public class DragAndSlideAdapter extends RecyclerView.Adapter<DragAndSlideAdapter.ViewHolder> implements ItemTouchHelperAdapter {
 
     private List<String> mData;
 
@@ -38,6 +39,28 @@ public class DragAndSlideAdapter extends RecyclerView.Adapter<DragAndSlideAdapte
     @Override
     public int getItemCount() {
         return mData.size() > 0 ? mData.size() : 0;
+    }
+
+    @Override
+    public void onItemMove(int fromPosition, int toPosition) {
+//        if (fromPosition < toPosition) {
+//            for (int i = fromPosition; i < toPosition; i++) {
+//                Collections.swap(mData, i, i + 1);
+//            }
+//        } else {
+//            for (int i = fromPosition; i > toPosition; i--) {
+//                Collections.swap(mData, i, i - 1);
+//            }
+//        }
+//        notifyItemMoved(fromPosition, toPosition);
+        Collections.swap(mData, fromPosition, toPosition);
+        notifyItemMoved(fromPosition, toPosition);
+    }
+
+    @Override
+    public void onItemDismiss(int position) {
+        mData.remove(position);
+        notifyItemRemoved(position);
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
