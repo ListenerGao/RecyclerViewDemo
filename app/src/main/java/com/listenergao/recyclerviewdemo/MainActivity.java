@@ -8,6 +8,7 @@ import com.listenergao.recyclerviewdemo.activity.BaseActivity;
 import com.listenergao.recyclerviewdemo.activity.CommonRecyclerViewActivity;
 import com.listenergao.recyclerviewdemo.activity.DragAndSlideActivity;
 import com.listenergao.recyclerviewdemo.activity.GridLayoutActivity;
+import com.listenergao.recyclerviewdemo.activity.SlipRemoveActivity;
 import com.listenergao.recyclerviewdemo.activity.StaggeredActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
@@ -16,6 +17,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button mGridLayoutActivity;
     private Button mStaggeredActivity;
     private Button mDragAndSlideActivity;
+    private Button mSlipRemoveActivity;
 
 
     @Override
@@ -28,10 +30,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mGridLayoutActivity = ((Button) findViewById(R.id.button2));
         mStaggeredActivity = ((Button) findViewById(R.id.button3));
         mDragAndSlideActivity = ((Button) findViewById(R.id.button4));
+        mSlipRemoveActivity = ((Button) findViewById(R.id.button5));
         mCommonRecyclerViewActivity.setOnClickListener(this);
         mGridLayoutActivity.setOnClickListener(this);
         mStaggeredActivity.setOnClickListener(this);
         mDragAndSlideActivity.setOnClickListener(this);
+        mSlipRemoveActivity.setOnClickListener(this);
     }
 
     @Override
@@ -48,6 +52,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.button4:
                 startActivity(DragAndSlideActivity.class);
+                break;
+            case R.id.button5:
+                startActivity(SlipRemoveActivity.class);
                 break;
         }
     }

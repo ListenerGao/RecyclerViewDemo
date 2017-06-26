@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义属性声明文件 -->
+    <declare-styleable name="SwipeMenuLayout">
+        <attr name="leftView" format="reference" />
+        <attr name="rightView" format="reference" />
+        <attr name="contentView" format="reference" />
+        <attr name="isShowLeftView" format="boolean" />
+        <attr name="isShowRightView" format="boolean" />
+        <attr name="fraction" format="float" />
+    </declare-styleable>
+</resources>
