@@ -31,4 +31,5 @@ dependencies {
     implementation Config.depConfig.recyclerview
 
     implementation project(':swipemenulayout')
+    implementation project(':swipemenulib')
 }

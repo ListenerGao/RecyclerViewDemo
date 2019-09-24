@@ -1,1 +1,1 @@
-include ':app', ':swipemenulayout'
+include ':app', ':swipemenulayout', ':swipemenulib'
