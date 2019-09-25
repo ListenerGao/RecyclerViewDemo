@@ -9,6 +9,7 @@ import com.listenergao.recyclerviewdemo.activity.CommonRecyclerViewActivity;
 import com.listenergao.recyclerviewdemo.activity.DragAndSlideActivity;
 import com.listenergao.recyclerviewdemo.activity.GridLayoutActivity;
 import com.listenergao.recyclerviewdemo.activity.SlipRemoveActivity;
+import com.listenergao.recyclerviewdemo.activity.SongListActivity;
 import com.listenergao.recyclerviewdemo.activity.StaggeredActivity;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
@@ -36,6 +37,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mStaggeredActivity.setOnClickListener(this);
         mDragAndSlideActivity.setOnClickListener(this);
         mSlipRemoveActivity.setOnClickListener(this);
+        findViewById(R.id.button6).setOnClickListener(this);
     }
 
     @Override
@@ -55,6 +57,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.button5:
                 startActivity(SlipRemoveActivity.class);
+                break;
+            case R.id.button6:
+                startActivity(SongListActivity.class);
                 break;
         }
     }

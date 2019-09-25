@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RecyclerViewDemo</string>
+    <string name="song_list_title">播放全部(%d首)</string>
 </resources>

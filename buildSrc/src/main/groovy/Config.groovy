@@ -19,12 +19,21 @@ class Config {
 
 
     protected static depConfig = [
-            appcompat       : 'androidx.appcompat:appcompat:1.1.0',
-            constraintlayout: 'androidx.constraintlayout:constraintlayout:1.1.3',
-            recyclerview    : 'androidx.recyclerview:recyclerview:1.0.0',
-            junit           : 'junit:junit:4.12',
-            runner          : 'androidx.test:runner:1.2.0',
-            espresso_core   : 'androidx.test.espresso:espresso-core:3.2.0'
+
+            junit            : 'junit:junit:4.12',
+            runner           : 'androidx.test:runner:1.2.0',
+            espresso_core    : 'androidx.test.espresso:espresso-core:3.2.0',
+
+
+            appcompat        : 'androidx.appcompat:appcompat:1.1.0',
+            constraintlayout : 'androidx.constraintlayout:constraintlayout:1.1.3',
+            recyclerview     : 'androidx.recyclerview:recyclerview:1.0.0',
+            material         : 'com.google.android.material:material:1.0.0',
+            legacy_support_v4: 'androidx.legacy:legacy-support-v4:1.0.0',
+
+
+            statusbarutil    : 'com.jaeger.statusbarutil:library:1.5.1'
+
 
     ]
 }

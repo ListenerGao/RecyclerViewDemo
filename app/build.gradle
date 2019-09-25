@@ -22,13 +22,17 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    testImplementation 'junit:junit:4.12'
+    testImplementation Config.depConfig.junit
     androidTestImplementation Config.depConfig.runner
     androidTestImplementation Config.depConfig.espresso_core
 
     implementation Config.depConfig.appcompat
     implementation Config.depConfig.constraintlayout
     implementation Config.depConfig.recyclerview
+    implementation Config.depConfig.material
+    implementation Config.depConfig.legacy_support_v4
+
+    implementation Config.depConfig.statusbarutil
 
     implementation project(':swipemenulayout')
     implementation project(':swipemenulib')
