@@ -6,8 +6,10 @@ import android.widget.Button;
 
 import com.listenergao.recyclerviewdemo.activity.BaseActivity;
 import com.listenergao.recyclerviewdemo.activity.CommonRecyclerViewActivity;
+import com.listenergao.recyclerviewdemo.activity.CustomBehaviorActivity;
 import com.listenergao.recyclerviewdemo.activity.DragAndSlideActivity;
 import com.listenergao.recyclerviewdemo.activity.GridLayoutActivity;
+import com.listenergao.recyclerviewdemo.activity.PullDownActivity;
 import com.listenergao.recyclerviewdemo.activity.SlipRemoveActivity;
 import com.listenergao.recyclerviewdemo.activity.SongListActivity;
 import com.listenergao.recyclerviewdemo.activity.StaggeredActivity;
@@ -38,6 +40,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mDragAndSlideActivity.setOnClickListener(this);
         mSlipRemoveActivity.setOnClickListener(this);
         findViewById(R.id.button6).setOnClickListener(this);
+        findViewById(R.id.button7).setOnClickListener(this);
     }
 
     @Override
@@ -61,11 +64,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.button6:
                 startActivity(SongListActivity.class);
                 break;
+            case R.id.button7:
+                startActivity(CustomBehaviorActivity.class);
+                break;
         }
-    }
-
-    private void startActivity(Class clazz) {
-        Intent intent = new Intent(this, clazz);
-        startActivity(intent);
     }
 }

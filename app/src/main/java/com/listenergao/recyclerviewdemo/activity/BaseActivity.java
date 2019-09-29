@@ -1,6 +1,7 @@
 package com.listenergao.recyclerviewdemo.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -105,5 +106,11 @@ public class BaseActivity extends AppCompatActivity {
      */
     protected void setToolbarMenuOnClickListener(Toolbar.OnMenuItemClickListener listener) {
         mToolbar.setOnMenuItemClickListener(listener);
+    }
+
+
+    public void startActivity(Class clazz) {
+        Intent intent = new Intent(this, clazz);
+        startActivity(intent);
     }
 }

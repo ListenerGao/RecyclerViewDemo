@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">RecyclerViewDemo</string>
     <string name="song_list_title">播放全部(%d首)</string>
+
+    <string name="pull_down_behavior">com.listenergao.recyclerviewdemo.behavior.AppbarZoomBehavior</string>
+    <string name="scale_up_behavior">com.listenergao.recyclerviewdemo.behavior.ScaleUpShowBehavior</string>
 </resources>

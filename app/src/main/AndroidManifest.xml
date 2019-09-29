@@ -29,6 +29,9 @@
         <activity android:name=".activity.DragAndSlideActivity" />
         <activity android:name=".activity.SlipRemoveActivity"/>
         <activity android:name=".activity.SongListActivity"/>
+        <activity android:name=".activity.PullDownActivity"/>
+        <activity android:name=".activity.CustomBehaviorActivity"/>
+        <activity android:name=".activity.ScaleUpActivity"/>
     </application>
 
 </manifest>
