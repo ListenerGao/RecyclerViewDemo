@@ -32,6 +32,8 @@
         <activity android:name=".activity.PullDownActivity"/>
         <activity android:name=".activity.CustomBehaviorActivity"/>
         <activity android:name=".activity.ScaleUpActivity"/>
+        <activity android:name=".activity.MultipleItemActivity"/>
+        <activity android:name=".activity.MultipleItemOneActivity"/>
     </application>
 
 </manifest>
